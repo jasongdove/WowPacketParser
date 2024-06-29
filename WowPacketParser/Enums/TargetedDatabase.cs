@@ -17,7 +17,9 @@ namespace WowPacketParser.Enums
         // chose higher value to have some room for future
         Classic             = 20,
         WotlkClassic        = 21,
-        CataClassic         = 22
+        CataClassic         = 22,
+
+        MistsOfPandaria     = 30
     }
 
     [Flags]
@@ -28,12 +30,13 @@ namespace WowPacketParser.Enums
         TheBurningCrusade                 = 1 << TargetedDatabase.TheBurningCrusade,
         WrathOfTheLichKing                = 1 << TargetedDatabase.WrathOfTheLichKing,
         Cataclysm                         = 1 << TargetedDatabase.Cataclysm,
+        MistsOfPandaria                   = 1 << TargetedDatabase.MistsOfPandaria,
         WarlordsOfDraenor                 = 1 << TargetedDatabase.WarlordsOfDraenor,
         Legion                            = 1 << TargetedDatabase.Legion,
         BattleForAzeroth                  = 1 << TargetedDatabase.BattleForAzeroth,
         Shadowlands                       = 1 << TargetedDatabase.Shadowlands,
         Dragonflight                      = 1 << TargetedDatabase.Dragonflight,
-        AnyRetail                         = TheBurningCrusade | WrathOfTheLichKing | Cataclysm | WarlordsOfDraenor | Legion | BattleForAzeroth | Shadowlands | Dragonflight,
+        AnyRetail                         = TheBurningCrusade | WrathOfTheLichKing | Cataclysm | MistsOfPandaria | WarlordsOfDraenor | Legion | BattleForAzeroth | Shadowlands | Dragonflight,
 
         // Classic
         Classic                           = 1 << TargetedDatabase.Classic,
@@ -46,15 +49,16 @@ namespace WowPacketParser.Enums
         // predefines
         TillWrathOfTheLichKing            = TheBurningCrusade | WrathOfTheLichKing,
         TillCataclysm                     = TheBurningCrusade | WrathOfTheLichKing | Cataclysm,
-        TillWarlordsOfDraenor             = TheBurningCrusade | WrathOfTheLichKing | Cataclysm | WarlordsOfDraenor,
-        TillLegion                        = TheBurningCrusade | WrathOfTheLichKing | Cataclysm | WarlordsOfDraenor | Legion,
-        TillBattleForAzeroth              = TheBurningCrusade | WrathOfTheLichKing | Cataclysm | WarlordsOfDraenor | Legion | BattleForAzeroth,
-        TillShadowlands                   = TheBurningCrusade | WrathOfTheLichKing | Cataclysm | WarlordsOfDraenor | Legion | BattleForAzeroth | Shadowlands,
+        TillMistsOfPandaria               = TheBurningCrusade | WrathOfTheLichKing | Cataclysm | MistsOfPandaria,
+        TillWarlordsOfDraenor             = TheBurningCrusade | WrathOfTheLichKing | Cataclysm | MistsOfPandaria | WarlordsOfDraenor,
+        TillLegion                        = TheBurningCrusade | WrathOfTheLichKing | Cataclysm | MistsOfPandaria | WarlordsOfDraenor | Legion,
+        TillBattleForAzeroth              = TheBurningCrusade | WrathOfTheLichKing | Cataclysm | MistsOfPandaria | WarlordsOfDraenor | Legion | BattleForAzeroth,
+        TillShadowlands                   = TheBurningCrusade | WrathOfTheLichKing | Cataclysm | MistsOfPandaria | WarlordsOfDraenor | Legion | BattleForAzeroth | Shadowlands,
 
-        FromCataclysmTillBattleForAzeroth = Cataclysm | WarlordsOfDraenor | Legion | BattleForAzeroth,
+        FromCataclysmTillBattleForAzeroth = Cataclysm | MistsOfPandaria | WarlordsOfDraenor | Legion | BattleForAzeroth,
 
         // update us when new expansion arrives
-        SinceCataclysm                    = Cataclysm | WarlordsOfDraenor | Legion | BattleForAzeroth | Shadowlands | Dragonflight,
+        SinceCataclysm                    = Cataclysm | MistsOfPandaria | WarlordsOfDraenor | Legion | BattleForAzeroth | Shadowlands | Dragonflight,
         SinceWarlordsOfDraenor            = WarlordsOfDraenor | Legion | BattleForAzeroth | Shadowlands | Dragonflight,
         SinceLegion                       = Legion | BattleForAzeroth | Shadowlands | Dragonflight,
         SinceBattleForAzeroth             = BattleForAzeroth | Shadowlands | Dragonflight,

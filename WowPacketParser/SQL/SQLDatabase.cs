@@ -131,7 +131,7 @@ namespace WowPacketParser.SQL
                 $"SELECT ID, Text, Text1, EmoteID1, EmoteID2, EmoteID3, EmoteDelay1, EmoteDelay2, EmoteDelay3, EmotesID, LanguageID, Flags, ConditionID, Sound{soundFieldName}ID1, Sound{soundFieldName}ID2 " +
                 $"FROM {Settings.HotfixesDatabase}.broadcast_text;";
 
-            if (Settings.TargetedDatabase == TargetedDatabase.WrathOfTheLichKing || Settings.TargetedDatabase == TargetedDatabase.Cataclysm)
+            if (Settings.TargetedDatabase == TargetedDatabase.WrathOfTheLichKing || Settings.TargetedDatabase == TargetedDatabase.Cataclysm || Settings.TargetedDatabase == TargetedDatabase.MistsOfPandaria)
                 query = "SELECT ID, LanguageID, Text, Text1, EmoteID1, EmoteID2, EmoteID3, EmoteDelay1, EmoteDelay2, EmoteDelay3, SoundEntriesID, EmotesID, Flags " +
                 $"FROM {Settings.TDBDatabase}.broadcast_text;";
 
@@ -242,8 +242,11 @@ namespace WowPacketParser.SQL
             if (Settings.TargetedProject == TargetedProject.Cmangos)
                 return;
 
+            bool hasAppearanceMod = Settings.TargetedDatabase != TargetedDatabase.MistsOfPandaria &&
+                                    Settings.TargetedDatabase >= TargetedDatabase.Legion;
+
             string columns = "CreatureID, ID, ItemID1, ItemID2, ItemID3, VerifiedBuild";
-            if (Settings.TargetedDatabase >= TargetedDatabase.Legion)
+            if (hasAppearanceMod)
                 columns += ", AppearanceModID1, ItemVisual1, AppearanceModID2, ItemVisual2, AppearanceModID3, ItemVisual3";
             string query = $"SELECT {columns} FROM {Settings.TDBDatabase}.creature_equip_template";
 
@@ -265,7 +268,7 @@ namespace WowPacketParser.SQL
                             VerifiedBuild = reader.GetInt32("VerifiedBuild")
                         };
 
-                        if (Settings.TargetedDatabase >= TargetedDatabase.Legion)
+                        if (hasAppearanceMod)
                         {
                             equip.AppearanceModID1 = reader.GetUInt16("AppearanceModID1");
                             equip.ItemVisual1 = reader.GetUInt16("ItemVisual1");
@@ -289,7 +292,7 @@ namespace WowPacketParser.SQL
 
         private static void LoadCreatureTemplateDifficultyWDBData()
         {
-            if (Settings.TargetedDatabase < TargetedDatabase.Dragonflight || !Settings.DBEnabled)
+            if (Settings.TargetedDatabase < TargetedDatabase.Dragonflight || Settings.TargetedDatabase is TargetedDatabase.MistsOfPandaria || !Settings.DBEnabled)
                 return;
 
             string columns = "Entry, DifficultyID, HealthScalingExpansion, HealthModifier, ManaModifier, CreatureDifficultyID, TypeFlags, TypeFlags2";
@@ -492,7 +495,7 @@ namespace WowPacketParser.SQL
             }
 
             // Phase - Before Cataclysm there was phasemask system
-            if (Settings.TargetedDatabase > TargetedDatabase.Cataclysm)
+            if (Settings.TargetedDatabase > TargetedDatabase.Cataclysm && Settings.TargetedDatabase is not TargetedDatabase.MistsOfPandaria)
             {
                 NameStores.Add(StoreNameType.PhaseId, GetDict<int, string>(
                     $"SELECT `ID`, `Name` FROM {Settings.TDBDatabase}.phase_name;"));
