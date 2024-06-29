@@ -1,8 +1,8 @@
-﻿using MySql.Data.MySqlClient;
-using System;
+﻿using System;
 using System.Data;
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
+using MySqlConnector;
 using WowPacketParser.Misc;
 
 namespace WowPacketParser.SQL
@@ -51,11 +51,9 @@ namespace WowPacketParser.SQL
         {
             try
             {
-                using (var command = new MySqlCommand(input, Conn))
-                {
-                    command.CommandTimeout = 2147483; // max timeout val, 0 doesn't work
-                    return command;
-                }
+                var command = new MySqlCommand(input, Conn);
+                command.CommandTimeout = 2147483; // max timeout val, 0 doesn't work
+                return command;
             }
             catch (Exception e)
             {

@@ -1,9 +1,9 @@
-﻿using MySql.Data.MySqlClient;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Diagnostics;
 using System.Linq;
+using MySqlConnector;
 using WowPacketParser.DBC.Structures.Dragonflight;
 using WowPacketParser.Enums;
 using WowPacketParser.Misc;
