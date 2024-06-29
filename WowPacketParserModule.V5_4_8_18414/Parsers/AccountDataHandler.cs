@@ -53,5 +53,21 @@ namespace WowPacketParserModule.V5_4_8_18414.Parsers
             packet.ReadBitsE<AccountDataType>("Data Type", 3);
         }
 
+        [Parser(Opcode.CMSG_UPDATE_ACCOUNT_DATA)]
+        public static void HandleClientUpdateAccountData(Packet packet)
+        {
+            // TODO: this is broken
+            packet.ReadToEnd();
+
+            // var decompCount = packet.ReadInt32();
+            // packet.ReadTime("Login Time");
+            // var compCount = packet.ReadInt32();
+            // var pkt = packet.Inflate(compCount, decompCount, false);
+            // var data = pkt.ReadWoWString(decompCount);
+            // data = System.Text.RegularExpressions.Regex.Replace(data, @"\p{C}+", string.Empty);
+            // pkt.ClosePacket();
+            // packet.ReadBitsE<AccountDataType>("Data Type", 3);
+            // packet.AddValue("Account Data", data);
+        }
     }
 }

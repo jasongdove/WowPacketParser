@@ -868,6 +868,14 @@ namespace WowPacketParserModule.V5_4_8_18414.Parsers
             packet.WriteGuid("Guid", guid);
         }
 
+        [Parser(Opcode.SMSG_MOVE_SET_ACTIVE_MOVER)]
+        public static void HandleMoveSetActiveMover(Packet packet)
+        {
+            var guid = packet.StartBitStream(5, 1, 4, 2, 3, 7, 0, 6);
+            packet.ParseBitStream(guid, 4, 6, 2, 0, 3, 7, 5, 1);
+            packet.WriteGuid("Guid", guid);
+        }
+
         [Parser(Opcode.CMSG_MOVE_TIME_SKIPPED)]
         public static void HandleMoveTimeSkipped(Packet packet)
         {
@@ -940,6 +948,14 @@ namespace WowPacketParserModule.V5_4_8_18414.Parsers
             packet.ParseBitStream(guid, 1, 5, 7, 4, 2, 6, 3, 0);
 
             packet.WriteGuid("Guid", guid);
+        }
+
+        [Parser(Opcode.CMSG_DISCARDED_TIME_SYNC_ACKS)]
+        public static void HandleDiscardedTimeSyncAcks(Packet packet)
+        {
+            var hasInfo = !packet.ReadBit();
+            if (hasInfo)
+                packet.ReadUInt32("MaxSequenceIndex");
         }
     }
 }

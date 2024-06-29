@@ -27,28 +27,20 @@ namespace WowPacketParserModule.V5_4_8_18414.Parsers
         [Parser(Opcode.SMSG_INITIALIZE_FACTIONS)]
         public static void HandleInitializeFactions(Packet packet)
         {
-            // TODO: this is broken
+            var factionFlags = new FactionFlag[256];
+            var factionStandings = new ReputationRank[256];
 
             for (var i = 0; i < 256; i++)
             {
-                packet.ReadByte();
-                packet.ReadUInt32();
-
-                packet.ReadByteE<FactionFlag>("Faction Flags", i);
-                packet.ReadUInt32E<ReputationRank>("Faction Standing", i);
+                factionFlags[i] = packet.ReadByteE<FactionFlag>();
+                factionStandings[i] = packet.ReadUInt32E<ReputationRank>();
             }
 
             for (var i = 0; i < 256; i++)
             {
-                packet.ReadByte();
-                packet.ReadUInt32();
-            }
-
-            for (var i = 0; i < 256; i++)
-            {
-                packet.ReadBit();
+                packet.AddValue("Faction Flag", factionFlags[i], i);
+                packet.AddValue("Faction Standing", factionStandings[i], i);
                 packet.ReadBit("Bonus Reputation", i);
-                packet.ReadBit();
             }
         }
     }

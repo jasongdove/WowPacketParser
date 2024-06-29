@@ -148,5 +148,14 @@ namespace WowPacketParserModule.V5_4_8_18414.Parsers
 
             packet.ReadByteE<ResponseCode>("Auth Code");
         }
+
+        [Parser(Opcode.SMSG_DANCE_STUDIO_CREATE_RESULT)]
+        public static void HandleDanceStudioCreateResult(Packet packet)
+        {
+            for (int i = 0; i < 4; i++)
+                packet.ReadUInt32("Secrets", i);
+
+            packet.ReadBit("Enable");
+        }
     }
 }

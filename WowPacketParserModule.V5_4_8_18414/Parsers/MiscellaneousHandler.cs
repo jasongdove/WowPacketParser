@@ -403,6 +403,33 @@ namespace WowPacketParserModule.V5_4_8_18414.Parsers
             for (var i = 0; i < count; ++i)
                 packet.ReadInt32("Cemetery Id", i);
         }
+
+        [Parser(Opcode.SMSG_FEATURE_SYSTEM_STATUS_GLUE_SCREEN)]
+        public static void HandleFeatureSystemStatusGlueScreen(Packet packet)
+        {
+            packet.ReadBit("InGameShopEnabled");
+            packet.ReadBit("InGameShopDisabledByParentalControls");
+            packet.ReadBit("InGameShopAvailable");
+        }
+
+        [Parser(Opcode.SMSG_DISPLAY_PROMOTION)]
+        public static void HandleDisplayPromotion(Packet packet)
+        {
+            packet.ReadUInt32("PromotionID");
+        }
+
+        [Parser(Opcode.SMSG_INITIAL_SETUP)]
+        public static void HandleInitialSetup(Packet packet)
+        {
+            var hasData = !packet.ReadBit();
+            var questsCompletedSize = (int)packet.ReadBits(24);
+            packet.ReadUInt32("RegionID");
+            packet.ReadByte("ServerExpansionTier");
+            if (hasData)
+                packet.ReadTime("Unk");
+            packet.ReadBytes(questsCompletedSize);
+            packet.ReadByte("ServerExpansionLevel");
+        }
     }
 }
 
