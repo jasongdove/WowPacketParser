@@ -14,13 +14,13 @@ namespace WowPacketParser.Store.Objects
         public int? BlobIndex;
 
         [DBFieldName("id", TargetedDatabaseFlag.TillCataclysm, true)]
-        [DBFieldName("Idx1", TargetedDatabaseFlag.SinceWarlordsOfDraenor | TargetedDatabaseFlag.WotlkClassic | TargetedDatabaseFlag.CataClassic, true)]
+        [DBFieldName("Idx1", TargetedDatabaseFlag.SinceMistsOfPandaria | TargetedDatabaseFlag.WotlkClassic | TargetedDatabaseFlag.CataClassic, true)]
         public int? ID;
 
         [DBFieldName("ObjectiveIndex")]
         public int? ObjectiveIndex;
 
-        [DBFieldName("QuestObjectiveID", TargetedDatabaseFlag.SinceWarlordsOfDraenor | TargetedDatabaseFlag.WotlkClassic | TargetedDatabaseFlag.CataClassic)]
+        [DBFieldName("QuestObjectiveID", TargetedDatabaseFlag.SinceMistsOfPandaria | TargetedDatabaseFlag.WotlkClassic | TargetedDatabaseFlag.CataClassic)]
         public int? QuestObjectiveID;
 
         [DBFieldName("QuestObjectID", TargetedDatabaseFlag.SinceWarlordsOfDraenor | TargetedDatabaseFlag.WotlkClassic | TargetedDatabaseFlag.CataClassic)]

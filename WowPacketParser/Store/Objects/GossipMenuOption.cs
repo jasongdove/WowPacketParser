@@ -14,6 +14,7 @@ namespace WowPacketParser.Store.Objects
         [DBFieldName("GossipOptionID", TargetedDatabaseFlag.SinceDragonflight | TargetedDatabaseFlag.WotlkClassic)]
         public int? GossipOptionID;
 
+        [DBFieldName("OptionIndex", TargetedDatabaseFlag.MistsOfPandaria, true)]
         [DBFieldName("OptionID", true)]
         public uint? OptionID;
 

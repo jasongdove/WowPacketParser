@@ -73,6 +73,7 @@ namespace WowPacketParser.Store.Objects
         [DBFieldName("curmana", TargetedDatabaseFlag.TillShadowlands)]
         public uint? CurMana;
 
+        [DBFieldName("movement_type", TargetedDatabaseFlag.MistsOfPandaria)]
         [DBFieldName("MovementType")]
         public uint? MovementType;
 

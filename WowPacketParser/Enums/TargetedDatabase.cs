@@ -59,6 +59,7 @@ namespace WowPacketParser.Enums
 
         // update us when new expansion arrives
         SinceCataclysm                    = Cataclysm | MistsOfPandaria | WarlordsOfDraenor | Legion | BattleForAzeroth | Shadowlands | Dragonflight,
+        SinceMistsOfPandaria              = MistsOfPandaria | WarlordsOfDraenor | Legion | BattleForAzeroth | Shadowlands | Dragonflight,
         SinceWarlordsOfDraenor            = WarlordsOfDraenor | Legion | BattleForAzeroth | Shadowlands | Dragonflight,
         SinceLegion                       = Legion | BattleForAzeroth | Shadowlands | Dragonflight,
         SinceBattleForAzeroth             = BattleForAzeroth | Shadowlands | Dragonflight,

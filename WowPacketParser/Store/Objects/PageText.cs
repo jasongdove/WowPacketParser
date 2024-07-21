@@ -7,6 +7,7 @@ namespace WowPacketParser.Store.Objects
     [DBTableName("page_text")]
     public sealed record PageText : IDataModel
     {
+        [DBFieldName("entry", TargetedDatabaseFlag.MistsOfPandaria, true)]
         [DBFieldName("ID", true)]
         public uint? ID;
 

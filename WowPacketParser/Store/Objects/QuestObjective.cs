@@ -4,43 +4,52 @@ using WowPacketParser.SQL;
 
 namespace WowPacketParser.Store.Objects
 {
-    [DBTableName("quest_objectives")]
+    [DBTableName("quest_objective", TargetedDatabaseFlag.MistsOfPandaria)]
+    [DBTableName("quest_objectives", TargetedDatabaseFlag.Any ^ TargetedDatabaseFlag.MistsOfPandaria)]
     public sealed record QuestObjective : IDataModel
     {
-        [DBFieldName("ID", true)]
+        [DBFieldName("id", TargetedDatabaseFlag.MistsOfPandaria, true)]
+        [DBFieldName("ID", TargetedDatabaseFlag.Any ^ TargetedDatabaseFlag.MistsOfPandaria, true)]
         public uint? ID;
 
-        [DBFieldName("QuestID")]
+        [DBFieldName("questId", TargetedDatabaseFlag.MistsOfPandaria)]
+        [DBFieldName("QuestID", TargetedDatabaseFlag.Any ^ TargetedDatabaseFlag.MistsOfPandaria)]
         public uint? QuestID;
 
-        [DBFieldName("Type")]
+        [DBFieldName("type", TargetedDatabaseFlag.MistsOfPandaria)]
+        [DBFieldName("Type", TargetedDatabaseFlag.Any ^ TargetedDatabaseFlag.MistsOfPandaria)]
         public QuestRequirementType? Type;
 
         [DBFieldName("Order", TargetedDatabaseFlag.SinceLegion | TargetedDatabaseFlag.AnyClassic)]
         public uint? Order;
 
-        [DBFieldName("StorageIndex")]
+        [DBFieldName("index", TargetedDatabaseFlag.MistsOfPandaria)]
+        [DBFieldName("StorageIndex", TargetedDatabaseFlag.Any ^ TargetedDatabaseFlag.MistsOfPandaria)]
         public int? StorageIndex;
 
-        [DBFieldName("ObjectID")]
+        [DBFieldName("objectId", TargetedDatabaseFlag.MistsOfPandaria)]
+        [DBFieldName("ObjectID", TargetedDatabaseFlag.Any ^ TargetedDatabaseFlag.MistsOfPandaria)]
         public int? ObjectID;
 
-        [DBFieldName("Amount")]
+        [DBFieldName("amount", TargetedDatabaseFlag.MistsOfPandaria)]
+        [DBFieldName("Amount", TargetedDatabaseFlag.Any ^ TargetedDatabaseFlag.MistsOfPandaria)]
         public int? Amount;
 
-        [DBFieldName("Flags")]
+        [DBFieldName("flags", TargetedDatabaseFlag.MistsOfPandaria)]
+        [DBFieldName("Flags", TargetedDatabaseFlag.Any ^ TargetedDatabaseFlag.MistsOfPandaria)]
         public uint? Flags;
 
         [DBFieldName("Flags2", TargetedDatabaseFlag.SinceLegion | TargetedDatabaseFlag.AnyClassic)] // 7.1.0
         public uint? Flags2;
 
-        [DBFieldName("ProgressBarWeight")]
+        [DBFieldName("ProgressBarWeight", TargetedDatabaseFlag.Any ^ TargetedDatabaseFlag.MistsOfPandaria)]
         public float? ProgressBarWeight;
 
-        [DBFieldName("Description", LocaleConstant.enUS)]
+        [DBFieldName("description", TargetedDatabaseFlag.MistsOfPandaria, LocaleConstant.enUS)]
+        [DBFieldName("Description", TargetedDatabaseFlag.Any ^ TargetedDatabaseFlag.MistsOfPandaria, LocaleConstant.enUS)]
         public string Description;
 
-        [DBFieldName("VerifiedBuild")]
+        [DBFieldName("VerifiedBuild", TargetedDatabaseFlag.Any ^ TargetedDatabaseFlag.MistsOfPandaria)]
         public int? VerifiedBuild = ClientVersion.BuildInt;
     }
 }

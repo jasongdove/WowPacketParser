@@ -24,7 +24,7 @@ namespace WowPacketParser.Store.Objects
         [DBFieldName("QuestMaxScalingLevel", TargetedDatabaseFlag.WotlkClassic | TargetedDatabaseFlag.CataClassic)]
         public int? QuestMaxScalingLevel;
 
-        [DBFieldName("QuestPackageID", TargetedDatabaseFlag.SinceWarlordsOfDraenor | TargetedDatabaseFlag.AnyClassic)]
+        [DBFieldName("QuestPackageID", TargetedDatabaseFlag.SinceMistsOfPandaria | TargetedDatabaseFlag.AnyClassic)]
         public uint? QuestPackageID;
 
         [DBFieldName("ContentTuningID", TargetedDatabaseFlag.SinceShadowlands)]
@@ -81,7 +81,7 @@ namespace WowPacketParser.Store.Objects
         //[DBFieldName("RewardBonusMoney")]
         public uint? RewardBonusMoney;
 
-        [DBFieldName("RewardDisplaySpell", TargetedDatabaseFlag.TillCataclysm)]
+        [DBFieldName("RewardDisplaySpell", TargetedDatabaseFlag.TillMistsOfPandaria)]
         public uint? RewardDisplaySpell;
 
         [DBFieldName("RewardDisplaySpell", TargetedDatabaseFlag.Legion | TargetedDatabaseFlag.BattleForAzeroth, 3)]
@@ -90,7 +90,7 @@ namespace WowPacketParser.Store.Objects
         [DBFieldName("RewardSpell", TargetedDatabaseFlag.TillWrathOfTheLichKing)]
         public int? RewardSpell;
 
-        [DBFieldName("RewardSpell", TargetedDatabaseFlag.SinceWarlordsOfDraenor | TargetedDatabaseFlag.AnyClassic)]
+        [DBFieldName("RewardSpell", TargetedDatabaseFlag.SinceMistsOfPandaria | TargetedDatabaseFlag.AnyClassic)]
         public uint? RewardSpellWod;
 
         [DBFieldName("RequiredMinRepFaction", TargetedDatabaseFlag.Cataclysm)]
@@ -117,7 +117,7 @@ namespace WowPacketParser.Store.Objects
         [DBFieldName("RewardHonor", TargetedDatabaseFlag.TillCataclysm)]
         public int? RewardHonor;
 
-        [DBFieldName("RewardHonor", TargetedDatabaseFlag.SinceWarlordsOfDraenor | TargetedDatabaseFlag.AnyClassic)]
+        [DBFieldName("RewardHonor", TargetedDatabaseFlag.SinceMistsOfPandaria | TargetedDatabaseFlag.AnyClassic)]
         public uint? RewardHonorWod;
 
         [DBFieldName("RewardKillHonor")]
@@ -151,7 +151,7 @@ namespace WowPacketParser.Store.Objects
         public QuestFlags? Flags;
 
         [DBFieldName("SpecialFlags", TargetedDatabaseFlag.Cataclysm)]
-        [DBFieldName("FlagsEx", TargetedDatabaseFlag.SinceWarlordsOfDraenor | TargetedDatabaseFlag.AnyClassic)]
+        [DBFieldName("FlagsEx", TargetedDatabaseFlag.SinceMistsOfPandaria | TargetedDatabaseFlag.AnyClassic)]
         public QuestFlagsEx? FlagsEx;
 
         [DBFieldName("FlagsEx2", TargetedDatabaseFlag.SinceBattleForAzeroth | TargetedDatabaseFlag.AnyClassic)]
@@ -164,18 +164,18 @@ namespace WowPacketParser.Store.Objects
         public uint? RequiredPlayerKills;
 
         [DBFieldName("RewardSkillId", TargetedDatabaseFlag.Cataclysm)]
-        [DBFieldName("RewardSkillLineID", TargetedDatabaseFlag.SinceWarlordsOfDraenor | TargetedDatabaseFlag.AnyClassic)]
+        [DBFieldName("RewardSkillLineID", TargetedDatabaseFlag.SinceMistsOfPandaria | TargetedDatabaseFlag.AnyClassic)]
         public uint? RewardSkillLineID;
 
         [DBFieldName("RewardSkillPoints", TargetedDatabaseFlag.Cataclysm)]
-        [DBFieldName("RewardNumSkillUps", TargetedDatabaseFlag.SinceWarlordsOfDraenor | TargetedDatabaseFlag.AnyClassic)]
+        [DBFieldName("RewardNumSkillUps", TargetedDatabaseFlag.SinceMistsOfPandaria | TargetedDatabaseFlag.AnyClassic)]
         public uint? RewardNumSkillUps;
 
         [DBFieldName("RewardReputationMask", TargetedDatabaseFlag.Cataclysm)]
         public uint? RewardReputationMask;
 
         [DBFieldName("QuestGiverPortrait", TargetedDatabaseFlag.Cataclysm)]
-        [DBFieldName("PortraitGiver", TargetedDatabaseFlag.SinceWarlordsOfDraenor | TargetedDatabaseFlag.AnyClassic)]
+        [DBFieldName("PortraitGiver", TargetedDatabaseFlag.SinceMistsOfPandaria | TargetedDatabaseFlag.AnyClassic)]
         public uint? QuestGiverPortrait;
 
         [DBFieldName("PortraitGiverMount", TargetedDatabaseFlag.SinceBattleForAzeroth | TargetedDatabaseFlag.AnyClassic)]
@@ -185,7 +185,7 @@ namespace WowPacketParser.Store.Objects
         public int? PortraitGiverModelSceneID;
 
         [DBFieldName("QuestTurnInPortrait", TargetedDatabaseFlag.Cataclysm)]
-        [DBFieldName("PortraitTurnIn", TargetedDatabaseFlag.SinceWarlordsOfDraenor | TargetedDatabaseFlag.AnyClassic)]
+        [DBFieldName("PortraitTurnIn", TargetedDatabaseFlag.SinceMistsOfPandaria | TargetedDatabaseFlag.AnyClassic)]
         public uint? QuestTurnInPortrait;
 
         [DBFieldName("RewardItem", 4)]
@@ -221,7 +221,7 @@ namespace WowPacketParser.Store.Objects
         [DBFieldName("POIPriority", TargetedDatabaseFlag.TillCataclysm)]
         public uint? POIPriority;
 
-        [DBFieldName("POIPriority", TargetedDatabaseFlag.SinceWarlordsOfDraenor | TargetedDatabaseFlag.AnyClassic)]
+        [DBFieldName("POIPriority", TargetedDatabaseFlag.SinceMistsOfPandaria | TargetedDatabaseFlag.AnyClassic)]
         public int? POIPriorityWod;
 
         [DBFieldName("RewardTitle")]
@@ -245,10 +245,10 @@ namespace WowPacketParser.Store.Objects
         [DBFieldName("RewardFactionOverride", 5)]
         public int?[] RewardFactionOverride;
 
-        [DBFieldName("RewardFactionFlags", TargetedDatabaseFlag.SinceWarlordsOfDraenor | TargetedDatabaseFlag.AnyClassic)]
+        [DBFieldName("RewardFactionFlags", TargetedDatabaseFlag.SinceMistsOfPandaria | TargetedDatabaseFlag.AnyClassic)]
         public uint? RewardFactionFlags;
 
-        [DBFieldName("AreaGroupID", TargetedDatabaseFlag.SinceWarlordsOfDraenor | TargetedDatabaseFlag.AnyClassic)]
+        [DBFieldName("AreaGroupID", TargetedDatabaseFlag.SinceMistsOfPandaria | TargetedDatabaseFlag.AnyClassic)]
         public uint? AreaGroupID;
 
         [DBFieldName("TimeAllowed")]
@@ -257,7 +257,7 @@ namespace WowPacketParser.Store.Objects
         [DBFieldName("AllowableRaces", TargetedDatabaseFlag.TillCataclysm)]
         public RaceMask? AllowableRaces;
 
-        [DBFieldName("AllowableRaces", TargetedDatabaseFlag.SinceWarlordsOfDraenor | TargetedDatabaseFlag.AnyClassic)]
+        [DBFieldName("AllowableRaces", TargetedDatabaseFlag.SinceMistsOfPandaria | TargetedDatabaseFlag.AnyClassic)]
         public ulong? AllowableRacesWod;
 
         [DBFieldName("QuestRewardID", TargetedDatabaseFlag.Legion)]
@@ -310,11 +310,11 @@ namespace WowPacketParser.Store.Objects
         public string[] ObjectiveText;
 
         [DBFieldName("RewardCurrencyId", TargetedDatabaseFlag.Cataclysm, 4)]
-        [DBFieldName("RewardCurrencyID", TargetedDatabaseFlag.SinceWarlordsOfDraenor | TargetedDatabaseFlag.AnyClassic, 4)]
+        [DBFieldName("RewardCurrencyID", TargetedDatabaseFlag.SinceMistsOfPandaria | TargetedDatabaseFlag.AnyClassic, 4)]
         public uint?[] RewardCurrencyID;
 
         [DBFieldName("RewardCurrencyCount", TargetedDatabaseFlag.Cataclysm, 4)]
-        [DBFieldName("RewardCurrencyQty", TargetedDatabaseFlag.SinceWarlordsOfDraenor | TargetedDatabaseFlag.AnyClassic, 4)]
+        [DBFieldName("RewardCurrencyQty", TargetedDatabaseFlag.SinceMistsOfPandaria | TargetedDatabaseFlag.AnyClassic, 4)]
         public uint?[] RewardCurrencyCount;
 
         [DBFieldName("RequiredCurrencyId", TargetedDatabaseFlag.Cataclysm, 4)]
@@ -324,27 +324,27 @@ namespace WowPacketParser.Store.Objects
         public uint?[] RequiredCurrencyCount;
 
         [DBFieldName("QuestGiverTextWindow", TargetedDatabaseFlag.Cataclysm)]
-        [DBFieldName("PortraitGiverText", TargetedDatabaseFlag.SinceWarlordsOfDraenor | TargetedDatabaseFlag.WotlkClassic | TargetedDatabaseFlag.CataClassic, LocaleConstant.enUS)]
+        [DBFieldName("PortraitGiverText", TargetedDatabaseFlag.SinceMistsOfPandaria | TargetedDatabaseFlag.WotlkClassic | TargetedDatabaseFlag.CataClassic, LocaleConstant.enUS)]
         public string QuestGiverTextWindow;
 
         [DBFieldName("QuestGiverTargetName", TargetedDatabaseFlag.Cataclysm)]
-        [DBFieldName("PortraitGiverName", TargetedDatabaseFlag.SinceWarlordsOfDraenor | TargetedDatabaseFlag.WotlkClassic | TargetedDatabaseFlag.CataClassic, LocaleConstant.enUS)]
+        [DBFieldName("PortraitGiverName", TargetedDatabaseFlag.SinceMistsOfPandaria | TargetedDatabaseFlag.WotlkClassic | TargetedDatabaseFlag.CataClassic, LocaleConstant.enUS)]
         public string QuestGiverTargetName;
 
         [DBFieldName("QuestTurnTextWindow", TargetedDatabaseFlag.Cataclysm)]
-        [DBFieldName("PortraitTurnInText", TargetedDatabaseFlag.SinceWarlordsOfDraenor | TargetedDatabaseFlag.WotlkClassic | TargetedDatabaseFlag.CataClassic, LocaleConstant.enUS)]
+        [DBFieldName("PortraitTurnInText", TargetedDatabaseFlag.SinceMistsOfPandaria | TargetedDatabaseFlag.WotlkClassic | TargetedDatabaseFlag.CataClassic, LocaleConstant.enUS)]
         public string QuestTurnTextWindow;
 
         [DBFieldName("QuestTurnTargetName", TargetedDatabaseFlag.Cataclysm)]
-        [DBFieldName("PortraitTurnInName", TargetedDatabaseFlag.SinceWarlordsOfDraenor | TargetedDatabaseFlag.WotlkClassic | TargetedDatabaseFlag.CataClassic, LocaleConstant.enUS)]
+        [DBFieldName("PortraitTurnInName", TargetedDatabaseFlag.SinceMistsOfPandaria | TargetedDatabaseFlag.WotlkClassic | TargetedDatabaseFlag.CataClassic, LocaleConstant.enUS)]
         public string QuestTurnTargetName;
 
         [DBFieldName("SoundAccept", TargetedDatabaseFlag.Cataclysm)]
-        [DBFieldName("AcceptedSoundKitID", TargetedDatabaseFlag.SinceWarlordsOfDraenor | TargetedDatabaseFlag.AnyClassic)]
+        [DBFieldName("AcceptedSoundKitID", TargetedDatabaseFlag.SinceMistsOfPandaria | TargetedDatabaseFlag.AnyClassic)]
         public uint? SoundAccept;
 
         [DBFieldName("SoundTurnIn", TargetedDatabaseFlag.Cataclysm)]
-        [DBFieldName("CompleteSoundKitID", TargetedDatabaseFlag.SinceWarlordsOfDraenor | TargetedDatabaseFlag.AnyClassic)]
+        [DBFieldName("CompleteSoundKitID", TargetedDatabaseFlag.SinceMistsOfPandaria | TargetedDatabaseFlag.AnyClassic)]
         public uint? SoundTurnIn;
 
         [DBFieldName("VerifiedBuild")]

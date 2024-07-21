@@ -37,9 +37,11 @@ namespace WowPacketParser.Store.Objects
         [DBFieldName("aiAnimKit", TargetedDatabaseFlag.SinceLegion | TargetedDatabaseFlag.WotlkClassic)]
         public ushort? AIAnimKit;
 
+        [DBFieldName("movement_anim_kit", TargetedDatabaseFlag.MistsOfPandaria)]
         [DBFieldName("movementAnimKit", TargetedDatabaseFlag.SinceLegion | TargetedDatabaseFlag.WotlkClassic)]
         public ushort? MovementAnimKit;
 
+        [DBFieldName("melee_anim_kit", TargetedDatabaseFlag.MistsOfPandaria)]
         [DBFieldName("meleeAnimKit", TargetedDatabaseFlag.SinceLegion | TargetedDatabaseFlag.WotlkClassic)]
         public ushort? MeleeAnimKit;
 
