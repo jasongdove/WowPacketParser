@@ -30,6 +30,7 @@ namespace WowPacketParser.Enums.Version.V5_4_8_18414
             {Opcode.CMSG_ATTACK_STOP, 0x0345},
             {Opcode.CMSG_ATTACK_SWING, 0x02E7},
             {Opcode.CMSG_AUCTION_HELLO_REQUEST, 0x0379},
+            {Opcode.CMSG_AUCTION_REPLICATE_ITEMS, 0x0743},
             {Opcode.CMSG_AUTH_CONTINUED_SESSION, 0x0F49},
             {Opcode.CMSG_AUTH_SESSION, 0x00B2},
             {Opcode.CMSG_AUTOBANK_ITEM, 0x066D},

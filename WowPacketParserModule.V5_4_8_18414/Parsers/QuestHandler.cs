@@ -700,5 +700,25 @@ namespace WowPacketParserModule.V5_4_8_18414.Parsers
             for (var i = 0; i < count; i++)
                 packet.AddValue("Quest ID", questIds[i], i);
         }
+
+
+        [Parser(Opcode.SMSG_QUEST_COMPLETION_NPC_RESPONSE)]
+        public static void HandleQuestNpcQueryResponse(Packet packet)
+        {
+            var questCount = (int)packet.ReadBits(21);
+
+            var npcCounts = new uint[questCount];
+
+            for (var i = 0; i < questCount; ++i)
+                npcCounts[i] = packet.ReadBits(22);
+
+            for (var i = 0; i < questCount; ++i)
+            {
+                packet.ReadInt32("Quest Id", i);
+
+                for (var j = 0; j < npcCounts[i]; ++j)
+                    packet.ReadInt32("Creature", i, j);
+            }
+        }
     }
 }
