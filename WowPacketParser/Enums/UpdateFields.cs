@@ -381,6 +381,7 @@ namespace WowPacketParser.Enums
         PLAYER_EXPERTISE,
         PLAYER_EXPLORED_ZONES_1,
         PLAYER_FAKE_INEBRIATION,
+        [UpdateField(UpdateFieldType.Guid)]
         PLAYER_FARSIGHT,
         PLAYER_FIELD_ARENA_CURRENCY,
         PLAYER_FIELD_ARENA_TEAM_INFO_1_1,
